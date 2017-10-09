@@ -1,6 +1,6 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
 @Injectable()
-export class NgxBootstrapTourStepService {
+export class NgxBootstrapProductTourStepService {
   public template: TemplateRef<{ content: string }>;
 }

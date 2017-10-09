@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxBootstrapTourService } from '../../lib/ngx-bootstrap-product-tour';
+import { NgxBootstrapProductTourService } from '../../lib/ngx-bootstrap-product-tour';
 
 @Component({
   selector: 'app-tour-component',
@@ -8,7 +8,7 @@ import { NgxBootstrapTourService } from '../../lib/ngx-bootstrap-product-tour';
 })
 export class TourComponentComponent {
 
-  constructor(public tourService: NgxBootstrapTourService) { 
+  constructor(public tourService: NgxBootstrapProductTourService) { 
 
   this.tourService.events$.subscribe(console.log);
   this.tourService.initialize([{
@@ -42,7 +42,6 @@ export class TourComponentComponent {
     anchorId: 'config.route',
     content: 'Tours can span multiple routes.',
     title: 'Route',
-    route:''
   }, {
     anchorId: 'another.route',
     content: 'Like this!',
@@ -52,8 +51,7 @@ export class TourComponentComponent {
     anchorId: 'config.route',
     content: 'And then back again.',
     placement: 'bottom',
-    title: 'Route Return',
-    route:''
+    title: 'Route Return'
   }, {
     anchorId: 'config.placement.default',
     content: 'Steps can be positioned around an anchor. You can even have multiple steps use the same anchor.',
@@ -82,6 +80,8 @@ export class TourComponentComponent {
     anchorId: 'template',
     content: 'You can define custom template',
     title: 'Custom template',
-  }]);
+  }], {
+    route:''
+  });
   }
 }

@@ -1,2 +1,2 @@
-export * from './ngx-bootstrap-tour.module'
-export * from './ngx-bootstrap-tour.service'
+export * from './ngx-bootstrap-product-tour.module'
+export * from './ngx-bootstrap-product-tour.service'

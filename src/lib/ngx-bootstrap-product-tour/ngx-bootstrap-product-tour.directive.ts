@@ -1,22 +1,22 @@
 import { ComponentFactoryResolver, Directive, ElementRef, Injector, Input, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef, Renderer } from '@angular/core';
 import { ComponentLoaderFactory, PopoverConfig, PopoverDirective } from 'ngx-bootstrap';
-import { NgxBootstrapTourService } from './ngx-bootstrap-tour.service';
-import { IStep } from './ngx-bootstrap-tour.models';
+import { NgxBootstrapProductTourService } from './ngx-bootstrap-product-tour.service';
+import { IStep } from './ngx-bootstrap-product-tour.models';
 
 import withinviewport from 'withinviewport';
-import { NgxBootstrapTourStepService } from './ngx-bootstrap-tour-step/ngx-bootstrap-tour-step.service';
+import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour-step/ngx-bootstrap-product-tour-step.service';
 import { Router } from '@angular/router';
 
 @Directive({
   selector: '[tourAnchor]'
 })
-export class NgxBootstrapTourDirective extends PopoverDirective implements OnInit, OnDestroy {
+export class NgxBootstrapProductTourDirective extends PopoverDirective implements OnInit, OnDestroy {
 
   @Input() public tourAnchor: string;
   private element: ElementRef;
 
-  constructor(private tourService: NgxBootstrapTourService,
-    private tourStepTemplate: NgxBootstrapTourStepService,
+  constructor(private tourService: NgxBootstrapProductTourService,
+    private tourStepTemplate: NgxBootstrapProductTourStepService,
     _elementRef: ElementRef,
     _renderer: Renderer,
     viewContainerRef: ViewContainerRef,

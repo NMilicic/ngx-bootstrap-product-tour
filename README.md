@@ -1,11 +1,11 @@
 <h2>About</h2>
 <p>This is a product tour library built with Angular (2+). It's inspired by <a tourAnchor="ngx-tour" href="https://github.com/isaacplmann/ngx-tour">ngx-tour</a>.</p>
-<p><code>NgxBootstrapTourModule</code> is an implementation of the tour ui that uses <a href="https://valor-software.com/ngx-bootstrap">ngx-bootstrap</a>  popovers to display tour steps.</p>
+<p><code>NgxBootstrapProductTourModule</code> is an implementation of the tour ui that uses <a href="https://valor-software.com/ngx-bootstrap">ngx-bootstrap</a>  popovers to display tour steps.</p>
 
 <h2 tourAnchor="installation">Installation</h2>
 <ol>
   <li><code>npm i ngx-bootstrap-product-tour</code></li>
-  <li>Import <code>NgxBootstrapTourModule.forRoot()</code> into your app module</li>
+  <li>Import <code>NgxBootstrapProductTourModule.forRoot()</code> into your app module</li>
   <li>Make sure <code>RouterModule</code> is imported in your app module</li>
   <li>Include bootstrap css somehow - i.e. in your <code>index.html</code> add this line:<br>
     <code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"&gt;</code>    <br /> or if you are using angular-cli add to <code>angular-cli.json</code> add under styles
@@ -15,7 +15,7 @@
 
 <h2 tourAnchor="usage">Usage</h2>
 <ol>
-  <li>Add <code>&lt;ngx-bootstrap-tour&gt;&lt;/ngx-bootstrap-tour&gt;</code> to your root app component</li>
+  <li>Add <code>&lt;ngx-bootstrap-product-tour&gt;&lt;/ngx-bootstrap-product-tour&gt;</code> to your root app component</li>
   <li>
     Define anchor points for the tour steps by adding the <code>tourAnchor</code> directive throughout your app.
     <pre><code>&lt;div tourAnchor="some.anchor.id"&gt;...&lt;/div&gt;</code></pre>
@@ -211,7 +211,7 @@ this.tourService.initialize$.subscribe((steps: IStepOption[]) => {{ '{' }}
 
 <h2 tourAnchor="template">Custom template</h2>
 <p>
-  You can also customize the tour step template by providing an <code>&lt;ng-template&gt;</code> inside the <code>&lt;ngx-bootstrap-tour&gt;</code>
+  You can also customize the tour step template by providing an <code>&lt;ng-template&gt;</code> inside the <code>&lt;ngx-bootstrap-product-tour&gt;</code>
 </p>
 <p>
   The default template is equivalent to this:

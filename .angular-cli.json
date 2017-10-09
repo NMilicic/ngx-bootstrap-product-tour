@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "nmilicic-ngx-bootstrap-tour"
+    "name": "ngx-bootstrap-product-tour"
   },
   "apps": [
     {

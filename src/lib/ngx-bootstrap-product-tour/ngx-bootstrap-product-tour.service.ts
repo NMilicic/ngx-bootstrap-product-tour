@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IStep, TourState } from './ngx-bootstrap-tour.models';
+import { IStep, TourState } from './ngx-bootstrap-product-tour.models';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operator/map';
 import { mergeStatic } from 'rxjs/operator/merge';
@@ -7,10 +7,10 @@ import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import { Router, NavigationStart } from '@angular/router';
-import { NgxBootstrapTourDirective } from './ngx-bootstrap-tour.directive';
+import { NgxBootstrapProductTourDirective } from './ngx-bootstrap-product-tour.directive';
 
 @Injectable()
-export class NgxBootstrapTourService {
+export class NgxBootstrapProductTourService {
   public stepShow$: Subject<IStep> = new Subject();
   public stepHide$: Subject<IStep> = new Subject();
   public initialize$: Subject<IStep[]> = new Subject();
@@ -35,7 +35,7 @@ export class NgxBootstrapTourService {
   public steps: IStep[] = [];
   public currentStep: IStep;
 
-  public anchors: { [anchorId: string]: NgxBootstrapTourDirective } = {};
+  public anchors: { [anchorId: string]: NgxBootstrapProductTourDirective } = {};
   private status: TourState = TourState.OFF;
 
   constructor(private router: Router) { }
@@ -130,7 +130,7 @@ export class NgxBootstrapTourService {
     this.goToStep(this.loadStep(stepId));
   }
 
-  public register(anchorId: string, anchor: NgxBootstrapTourDirective): void {
+  public register(anchorId: string, anchor: NgxBootstrapProductTourDirective): void {
     if (this.anchors[anchorId]) {
       throw new Error('anchorId ' + anchorId + ' already registered!');
     }
