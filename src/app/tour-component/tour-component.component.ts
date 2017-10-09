@@ -73,14 +73,15 @@ export class TourComponentComponent {
     content: 'Take it back now y\'all.  One hop this time.',
     placement: 'bottom',
     title: 'Placement',
-  }, {
-    anchorId: 'hotkeys',
-    content: 'Try using the hotkeys to navigate through the tour.',
-    title: 'Hotkeys',
-  }, {
+  },{
     anchorId: 'events',
     content: 'You can subscribe to events',
     title: 'Events',
+  },
+  {
+    anchorId: 'template',
+    content: 'You can define custom template',
+    title: 'Custom template',
   }]);
   }
 }

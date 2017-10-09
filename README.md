@@ -1,27 +1,229 @@
-# NgxBootstrapTour
+<h2>About</h2>
+<p>This is a product tour library built with Angular (2+). It's inspired by <a tourAnchor="ngx-tour" href="https://github.com/isaacplmann/ngx-tour">ngx-tour</a>.</p>
+<p><code>NgxBootstrapTourModule</code> is an implementation of the tour ui that uses <a href="https://valor-software.com/ngx-bootstrap">ngx-bootstrap</a>  popovers to display tour steps.</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+<h2 tourAnchor="installation">Installation</h2>
+<ol>
+  <li><code>npm i ngx-bootstrap-product-tour</code></li>
+  <li>Import <code>NgxBootstrapTourModule.forRoot()</code> into your app module</li>
+  <li>Make sure <code>RouterModule</code> is imported in your app module</li>
+  <li>Include bootstrap css somehow - i.e. in your <code>index.html</code> add this line:<br>
+    <code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"&gt;</code>    <br /> or if you are using angular-cli add to <code>angular-cli.json</code> add under styles
+    <code> "../node_modules/bootstrap/dist/css/bootstrap.min.css"</code>
+  </li>
+</ol>
 
-## Development server
+<h2 tourAnchor="usage">Usage</h2>
+<ol>
+  <li>Add <code>&lt;ngx-bootstrap-tour&gt;&lt;/ngx-bootstrap-tour&gt;</code> to your root app component</li>
+  <li>
+    Define anchor points for the tour steps by adding the <code>tourAnchor</code> directive throughout your app.
+    <pre><code>&lt;div tourAnchor="some.anchor.id"&gt;...&lt;/div&gt;</code></pre>
+  </li>
+  <li>
+    Define your tour steps using <code>tourService.initialize(steps)</code>
+    <pre>
+this.tourService.initialize([{{ '{' }}
+  anchorId: 'some.anchor.id',
+  content: 'Some content',
+  title: 'First',
+}, {{ '{' }}
+  anchorId: 'another.anchor.id',
+  content: 'Other content',
+  title: 'Second',
+}]);</pre>
+  </li>
+  <li>Start the tour with <code tourAnchor="tourService.start">tourService.start()</code></li>
+  <li>Check out the <a href="https://github.com/isaacplmann/ngx-tour/tree/master/src/app/ng-bootstrap">demo source code</a> for
+    an example.</li>
+</ol>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h2>TourService</h2>
+<p>The <code>TourService</code> controls the tour. Some key functions include:</p>
+<dl>
+  <dt>start()</dt>
+  <dd>Starts the tour</dd>
+  <dt>startAt(stepId: number | string)</dt>
+  <dd>Start the tour at the step with stepId or at the specified index</dd>
+  <dt>end()</dt>
+  <dd>Ends the tour</dd>
+  <dt>pause()</dt>
+  <dd>Pauses the tour</dd>
+  <dt>resume()</dt>
+  <dd>Resumes the tour</dd>
+  <dt>next()</dt>
+  <dd>Goes to the next step</dd>
+  <dt>prev()</dt>
+  <dd>Goes to the previous step</dd>
+</dl>
 
-## Code scaffolding
+<h2>Step Configuration</h2>
+<p>Each step can have the following properties.</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stepId</td>
+      <td>string</td>
+      <td>""</td>
+      <td>A unique identifier for the step</td>
+    </tr>
+    <tr tourAnchor="config.anchorId">
+      <td>anchorId</td>
+      <td>string</td>
+      <td>required</td>
+      <td>The anchor to which the step will be attached</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>string</td>
+      <td>""</td>
+      <td>The title of the tour step</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>string</td>
+      <td>""</td>
+      <td>The content text of the tour step</td>
+    </tr>
+    <tr tourAnchor="config.route">
+      <td>route</td>
+      <td>string | UrlSegment[]</td>
+      <td>undefined</td>
+      <td>
+        The route to which the tour should navigate before attempting to show this tour step. If undefined, no navigation is attempted.
+      </td>
+    </tr>
+    <tr tourAnchor="config.nextStep">
+      <td>nextStep</td>
+      <td>number | string</td>
+      <td>undefined</td>
+      <td>The step index or stepId of the next step. If undefined, the next step in the steps array is used.</td>
+    </tr>
+    <tr>
+      <td>prevStep</td>
+      <td>number | string</td>
+      <td>undefined</td>
+      <td>The step index or stepId of the previous step. If undefined, the previous step in the steps array is used.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>'top' | 'bottom' | 'right' | 'left'</td>
+      <td><span tourAnchor="config.placement.default">'top'</span></td>
+      <td>
+        Where the tour step should placed with respect to the anchor. 'before' and 'after' are synonyms for 'left' and 'right' respectively.
+        When RTL support is implemented, 'before' and 'after' will swap directions when RTL mode is enabled.
+      </td>
+    </tr>
+    <tr>
+      <td>preventScrolling</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>
+        Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to
+        true will disable the scroll behavior.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h2>Defaults</h2>
+<p>You can set default values in the <code>TourService.initialize</code> function.</p>
+<pre>
+this.tourService.initialize(steps, {{ '{' }}
+  route: '',
+  placement: 'left',
+  preventScrolling: true,
+});
+</pre>
+<p>Any value explicitly defined in a step will override the default value.</p>
 
-## Build
+<h2 tourAnchor="events">Event Observables</h2>
+<p>The <code>TourService</code> emits events that can be subscribed to like this:</p>
+<pre>
+this.tourService.initialize$.subscribe((steps: IStepOption[]) => {{ '{' }}
+  console.log('tour configured with these steps:', steps);
+});
+</pre>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Payload</th>
+      <th>Emitted When</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stepShow$</td>
+      <td>IStepOption</td>
+      <td>A step is shown</td>
+    </tr>
+    <tr>
+      <td>stepHide$</td>
+      <td>IStepOption</td>
+      <td>A step is hidden</td>
+    </tr>
+    <tr>
+      <td>initialize$</td>
+      <td>IStepOption[]</td>
+      <td>The tour is configured with a set of steps</td>
+    </tr>
+    <tr>
+      <td>start$</td>
+      <td>IStepOption</td>
+      <td>The tour begins</td>
+    </tr>
+    <tr>
+      <td>end$</td>
+      <td>any</td>
+      <td>The tour ends</td>
+    </tr>
+    <tr>
+      <td>pause$</td>
+      <td>IStepOption</td>
+      <td>The tour is paused</td>
+    </tr>
+    <tr>
+      <td>resume$</td>
+      <td>IStepOption</td>
+      <td>The tour resumes</td>
+    </tr>
+    <tr>
+      <td>anchorRegister$</td>
+      <td>string</td>
+      <td>An anchor is registered with the tour</td>
+    </tr>
+    <tr>
+      <td>anchorUnregister$</td>
+      <td>string</td>
+      <td>An anchor is unregistered from the tour</td>
+    </tr>
+  </tbody>
+</table>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<h2 tourAnchor="template">Custom template</h2>
+<p>
+  You can also customize the tour step template by providing an <code>&lt;ng-template&gt;</code> inside the <code>&lt;ngx-bootstrap-tour&gt;</code>
+</p>
+<p>
+  The default template is equivalent to this:
+</p>
+<pre><code>&lt;tour-step-template&gt;
+  &lt;ng-template let-step="step"&gt;
+    &lt;p class="tour-step-content"&gt;{{ '{{' }}step?.content}}&lt;/p&gt;
+    &lt;div class="tour-step-navigation"&gt;
+      &lt;button *ngIf="tourService.hasPrev(step)" class="btn btn-sm btn-default" (click)="tourService.prev()"&gt;« Prev&lt;/button&gt;
+      &lt;button *ngIf="tourService.hasNext(step)" class="btn btn-sm btn-default" (click)="tourService.next()"&gt;Next »&lt;/button&gt;
+      &lt;button class="btn btn-sm btn-default" (click)="tourService.end()"&gt;End&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/tour-step-template&gt;
+</code></pre>

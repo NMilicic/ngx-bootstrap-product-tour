@@ -39,12 +39,14 @@ export class NgxBootstrapTourDirective extends PopoverDirective implements OnIni
   public showTourStep(step: IStep): void {
     this.popover = this.tourStepTemplate.template;
     this.popoverTitle = step.title;
-    this.placement = step.placement ? step.placement : 'bottom';
+    this.placement = step.placement ? step.placement : 'top';
     this.container = 'body';
 
     this.show();
     if (!step.preventScrolling) {
-      if (!withinviewport(this.element.nativeElement, { sides: 'left top right bottom' })) {
+      if (!withinviewport(this.element.nativeElement, { sides: 'bottom' })) {
+        (<HTMLElement>this.element.nativeElement).scrollIntoView(false);
+      } else if (!withinviewport(this.element.nativeElement, { sides: 'left top right' })) {
         (<HTMLElement>this.element.nativeElement).scrollIntoView(true);
       }
     }
