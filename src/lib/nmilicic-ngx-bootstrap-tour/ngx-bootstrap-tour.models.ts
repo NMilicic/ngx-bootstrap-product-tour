@@ -8,7 +8,7 @@ export interface IStep {
     route?: string | UrlSegment[];
     nextStep?: number | string;
     prevStep?: number | string;
-    placement?: 'above' | 'below' | 'after' | 'before' | 'left' | 'right';
+    placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto';
     preventScrolling?: boolean;
   }
   

@@ -131,7 +131,6 @@ export class NgxBootstrapTourService {
   }
 
   public register(anchorId: string, anchor: NgxBootstrapTourDirective): void {
-    debugger;
     if (this.anchors[anchorId]) {
       throw new Error('anchorId ' + anchorId + ' already registered!');
     }
@@ -189,7 +188,6 @@ export class NgxBootstrapTourService {
   }
 
   private showStep(step: IStep): void {
-    debugger;
     const anchor = this.anchors[step && step.anchorId];
     if (!anchor) {
       this.end();

@@ -18,7 +18,6 @@ export class NgxBootstrapTourStepComponent implements AfterContentInit {
   }
 
   public ngAfterContentInit(): void {
-    debugger;
     this.ngxBootstrapTourStepService.template = this.stepTemplate || this.defaultTourStepTemplate;
   }
 }

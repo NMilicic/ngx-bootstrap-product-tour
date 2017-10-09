@@ -37,12 +37,11 @@ export class NgxBootstrapTourService {
 
   public anchors: { [anchorId: string]: NgxBootstrapTourDirective } = {};
   private status: TourState = TourState.OFF;
-
+  
   constructor(private router: Router) { }
 
   public initialize(steps: IStep[], stepDefaults?: IStep): void {
-    debugger;
-    if (steps && steps.length > 0) {
+    if (steps && steps.length > 0 && this.status === TourState.OFF) {
       this.status = TourState.OFF;
       this.steps = steps.map(step => Object.assign({}, stepDefaults, step));
       this.initialize$.next(this.steps);
@@ -160,6 +159,7 @@ export class NgxBootstrapTourService {
     } else if (step.route && Array.isArray(step.route)) {
       navigatePromise = this.router.navigate(step.route);
     }
+
     navigatePromise.then(navigated => {
       if (navigated !== false) {
         setTimeout(() => this.setCurrentStep(step));
