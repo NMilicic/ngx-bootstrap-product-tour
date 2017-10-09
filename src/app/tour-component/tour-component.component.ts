@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxBootstrapTourService } from '../../lib/nmilicic-ngx-bootstrap-tour/ngx-bootstrap-tour.service';
+import { NgxBootstrapTourService } from '../../lib/ngx-bootstrap-product-tour';
 
 @Component({
   selector: 'app-tour-component',
@@ -18,9 +18,9 @@ export class TourComponentComponent {
     title: 'Welcome',
   },
   {
-    anchorId: 'angular-ui-tour',
-    content: 'Thanks to angular-ui-tour for the inspiration for the library',
-    title: 'angular-ui-tour',
+    anchorId: 'ngx-tour',
+    content: 'Thanks to ngx-tour for the inspiration for the library',
+    title: 'Ngx-tour',
     placement: 'right',
   }, {
     anchorId: 'installation',

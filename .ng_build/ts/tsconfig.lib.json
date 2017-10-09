@@ -1,8 +1,8 @@
 {
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
-    "flatModuleId": "nmilicic-ngx-bootstrap-tour",
-    "flatModuleOutFile": "nmilicic-ngx-bootstrap-tour.js",
+    "flatModuleId": "ngx-bootstrap-product-tour",
+    "flatModuleOutFile": "ngx-bootstrap-product-tour.js",
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true
   },
@@ -36,6 +36,6 @@
     "**/*.spec.ts"
   ],
   "files": [
-    "./src/lib/nmilicic-ngx-bootstrap-tour"
+    "./src/lib/ngx-bootstrap-product-tour/public_api.ts"
   ]
 }
