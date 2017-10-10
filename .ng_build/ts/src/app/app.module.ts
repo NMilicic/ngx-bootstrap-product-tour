@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxBootstrapTourModule } from '../lib/ngx-bootstrap-product-tour';
+import { NgxBootstrapProductTourModule } from '../lib/ngx-bootstrap-product-tour';
 import { TourComponentComponent } from './tour-component/tour-component.component';
 import { RouterModule } from '@angular/router';
 import { OtherRouteComponent } from './other-route/other-route.component';
@@ -15,7 +15,7 @@ import { OtherRouteComponent } from './other-route/other-route.component';
   ],
   imports: [
     BrowserModule,
-    NgxBootstrapTourModule.forRoot(),
+    NgxBootstrapProductTourModule.forRoot(),
     RouterModule.forRoot([{
       component: TourComponentComponent,
       path: '',

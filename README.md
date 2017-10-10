@@ -1,5 +1,5 @@
 # ngx-bootstrap-product-tour
-
+[![npm version](https://badge.fury.io/js/ngx-bootstrap-product-tour.svg)](https://badge.fury.io/js/ngx-bootstrap-product-tour)
 ## About
 
 This is a product tour library built with Angular (2+). It's inspired by [ngx-tour](https://github.com/isaacplmann/ngx-tour).

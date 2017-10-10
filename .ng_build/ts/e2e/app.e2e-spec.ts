@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ngx-bootstrap-tour App', () => {
+describe('ngx-bootstrap-product-tour App', () => {
   let page: AppPage;
 
   beforeEach(() => {
