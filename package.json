@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-product-tour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular 2+ product tour using ngx-bootstrap popover",
   "keywords":["angular","tour","product tour","ngx-bootstrap"],
   "repository": {
@@ -57,5 +57,10 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.3.3"
+  },
+  "peerDependencies": {
+    "withinviewport": "^2.0.0",
+    "ngx-bootstrap": "^1.9.3",
+    "bootstrap": "^3.3.7"
   }
 }
