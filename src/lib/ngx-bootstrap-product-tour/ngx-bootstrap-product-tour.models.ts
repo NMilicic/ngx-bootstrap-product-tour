@@ -10,6 +10,7 @@ export interface IStep {
   prevStep?: number | string;
   placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto';
   preventScrolling?: boolean;
+  containerClass?: string;
 }
 
 export enum TourState {

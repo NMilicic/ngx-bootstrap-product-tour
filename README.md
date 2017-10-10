@@ -69,6 +69,7 @@ Each step can have the following properties.
         When RTL support is implemented, 'before' and 'after' will swap directions when RTL mode is enabled. |
 | preventScrolling | boolean | false | Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to
         true will disable the scroll behavior. |
+| containerClass | string |  "" | Css class for popover container |
 
 ## Defaults
 

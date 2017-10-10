@@ -81,7 +81,8 @@ export class TourComponentComponent {
     content: 'You can define custom template',
     title: 'Custom template',
   }], {
-    route:''
+    route:'',
+    containerClass:'example-custom-container-class'  
   });
   }
 }

@@ -39,6 +39,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
   public showTourStep(step: IStep): void {
     this.popover = this.tourStepTemplate.template;
     this.popoverTitle = step.title;
+    this.containerClass = step.containerClass ? step.containerClass : '';
     this.placement = step.placement ? step.placement : 'top';
     this.container = 'body';
 
