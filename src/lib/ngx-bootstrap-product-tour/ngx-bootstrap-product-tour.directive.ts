@@ -42,6 +42,8 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
     this.containerClass = step.containerClass ? step.containerClass : '';
     this.placement = step.placement ? step.placement : 'top';
     this.container = 'body';
+    if (step.orphan)
+      this.containerClass += ' orphan';
 
     this.show();
     if (!step.preventScrolling) {

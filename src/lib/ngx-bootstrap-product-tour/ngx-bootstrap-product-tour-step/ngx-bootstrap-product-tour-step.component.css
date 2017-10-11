@@ -1,0 +1,14 @@
+::ng-deep .orphan {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+::ng-deep .orphan>.popover-arrow {
+    display: none;
+}

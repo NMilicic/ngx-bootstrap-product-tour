@@ -16,12 +16,13 @@ export class TourComponentComponent {
     content: 'Welcome to the Ngx-Tour tour!',
     placement: 'right',
     title: 'Welcome',
+    orphan: true
   },
   {
     anchorId: 'ngx-tour',
     content: 'Thanks to ngx-tour for the inspiration for the library',
     title: 'Ngx-tour',
-    placement: 'right',
+    placement: 'right'
   }, {
     anchorId: 'installation',
     content: 'First, install the library...',

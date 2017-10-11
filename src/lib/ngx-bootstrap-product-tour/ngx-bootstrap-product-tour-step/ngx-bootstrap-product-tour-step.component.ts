@@ -5,7 +5,8 @@ import { NgxBootstrapProductTourService } from '../ngx-bootstrap-product-tour.se
 
 @Component({
   selector: 'ngx-bootstrap-product-tour',
-  templateUrl: './ngx-bootstrap-product-tour-step.component.html'
+  templateUrl: './ngx-bootstrap-product-tour-step.component.html',
+  styleUrls: ['./ngx-bootstrap-product-tour-step.component.css']
 })
 export class NgxBootstrapProductTourStepComponent implements AfterContentInit {
   @ViewChild('tourStep', { read: TemplateRef }) public defaultTourStepTemplate: TemplateRef<any>;

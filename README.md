@@ -7,7 +7,7 @@ This is a product tour library built with Angular (2+). It's inspired by [ngx-to
 
 ## Installation
 
-1. `npm i ngx-bootstrap-product-tour`
+1. `npm i ngx-bootstrap-product-tour ngx-bootstrap bootstrap withinviewport`
 2. Import `NgxBootstrapProductTourModule.forRoot()` into your app module
 3. Make sure `RouterModule` is imported in your app module
 4. Include bootstrap css somehow - i.e. in your `index.html` add this line:
@@ -26,18 +26,18 @@ This is a product tour library built with Angular (2+). It's inspired by [ngx-to
 3.  Define your tour steps using `tourService.initialize(steps)`
 
     ```typescript
-    this.tourService.initialize([{{ '{' }}
+    this.tourService.initialize([{
       anchorId: 'some.anchor.id',
       content: 'Some content',
       title: 'First',
-    }, {{ '{' }}
+    }, {
       anchorId: 'another.anchor.id',
       content: 'Other content',
       title: 'Second',
     }]);
     ```
 4. Start the tour with `tourService.start()`
-5. Check out the [demo source code](https://nmilicic.github.io/ngx-bootstrap-product-tour/) foran example.
+5. Check out the [demo](https://nmilicic.github.io/ngx-bootstrap-product-tour/) for an example or [demo source code](https://github.com/NMilicic/ngx-bootstrap-product-tour/tree/master/src).
 
 ## TourService
 
@@ -65,11 +65,10 @@ Each step can have the following properties.
 | route | string | UrlSegment[] | undefined | The route to which the tour should navigate before attempting to show this tour step. If undefined, no navigation is attempted. |
 | nextStep | number | string | undefined | The step index or stepId of the next step. If undefined, the next step in the steps array is used. |
 | prevStep | number | string | undefined | The step index or stepId of the previous step. If undefined, the previous step in the steps array is used. |
-| placement |  'top' | 'bottom' | 'right' | 'left' | 'top' | Where the tour step should placed with respect to the anchor. 'before' and 'after' are synonyms for 'left' and 'right' respectively.
-        When RTL support is implemented, 'before' and 'after' will swap directions when RTL mode is enabled. |
-| preventScrolling | boolean | false | Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to
-        true will disable the scroll behavior. |
+| placement |  'top' \| 'bottom' \| 'right' \| 'left' | 'top' | Where the tour step should placed with respect to the anchor. 
+| preventScrolling | boolean | false | Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to true will disable the scroll behavior. |
 | containerClass | string |  "" | Css class for popover container |
+| orphan | boolean |  false | Tour popover will be placed in the center of screen, must have anchorId but won't show next to this element |
 
 ## Defaults
 
@@ -112,14 +111,14 @@ this.tourService.initialize$.subscribe((steps: IStep[]) => {{ '{' }}
   The default template is equivalent to this:
 
 ```html
-<tour-step-template>
-  <ng-template let-step="step">
-    <p class="tour-step-content">{{ '{{' }}step?.content}}</p>
+<ngx-bootstrap-product-tour>
+    <ng-template #tourStep>
+    <p class="tour-step-content">{{tourService.currentStep.content}}</p>
     <div class="tour-step-navigation">
-      <button *ngIf="tourService.hasPrev(step)" class="btn btn-sm btn-default" (click)="tourService.prev()">&#xAB; Prev</button>
-      <button *ngIf="tourService.hasNext(step)" class="btn btn-sm btn-default" (click)="tourService.next()">Next &#xBB;</button>
-      <button class="btn btn-sm btn-default" (click)="tourService.end()">End</button>
-    </div>
-  </ng-template>
-</tour-step-template>
+    <button *ngIf="tourService.hasPrev(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.prev()">« Prev</button>
+    <button *ngIf="tourService.hasNext(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.next()">Next »</button>
+    <button class="btn btn-sm btn-error" (click)="tourService.end()">End</button>
+  </div>
+</ng-template>
+</ngx-bootstrap-product-tour>
 ```

@@ -11,6 +11,7 @@ export interface IStep {
   placement?: 'top' | 'bottom' | 'left' | 'right' | 'auto';
   preventScrolling?: boolean;
   containerClass?: string;
+  orphan?: boolean;
 }
 
 export enum TourState {
