@@ -69,8 +69,8 @@ Each step can have the following properties.
 | preventScrolling | boolean | false | Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to true will disable the scroll behavior. |
 | containerClass | string |  "" | Css class for popover container. |
 | orphan | boolean |  false | Tour popover will be placed in the center of the screen, must have anchorId but it won't be shown next to that element. |
-| promise | Promise<any> |  "" | Step shows after promise has been resolved. |
-| delay | Number |  0 | Time in milliseconds before showing the tour step. |
+| promise | promise&lt;any&gt; |  "" | Step shows after promise has been resolved. |
+| delay | number |  0 | Time in milliseconds before showing the tour step. |
 
 ## Defaults
 
