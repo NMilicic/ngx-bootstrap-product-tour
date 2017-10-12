@@ -12,6 +12,8 @@ export interface IStep {
   preventScrolling?: boolean;
   containerClass?: string;
   orphan?: boolean;
+  promise?: Promise<any>;
+  delay?: number;
 }
 
 export enum TourState {

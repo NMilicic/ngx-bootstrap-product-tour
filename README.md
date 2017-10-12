@@ -67,8 +67,10 @@ Each step can have the following properties.
 | prevStep | number | string | undefined | The step index or stepId of the previous step. If undefined, the previous step in the steps array is used. |
 | placement |  'top' \| 'bottom' \| 'right' \| 'left' | 'top' | Where the tour step should placed with respect to the anchor. 
 | preventScrolling | boolean | false | Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to true will disable the scroll behavior. |
-| containerClass | string |  "" | Css class for popover container |
-| orphan | boolean |  false | Tour popover will be placed in the center of screen, must have anchorId but won't show next to this element |
+| containerClass | string |  "" | Css class for popover container. |
+| orphan | boolean |  false | Tour popover will be placed in the center of the screen, must have anchorId but it won't be shown next to that element. |
+| promise | Promise<any> |  "" | Step shows after promise has been resolved. |
+| delay | Number |  0 | Time in milliseconds before showing the tour step. |
 
 ## Defaults
 
@@ -112,13 +114,13 @@ this.tourService.initialize$.subscribe((steps: IStep[]) => {{ '{' }}
 
 ```html
 <ngx-bootstrap-product-tour>
-    <ng-template #tourStep>
+  <ng-template #tourStep>
     <p class="tour-step-content">{{tourService.currentStep.content}}</p>
     <div class="tour-step-navigation">
-    <button *ngIf="tourService.hasPrev(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.prev()">« Prev</button>
-    <button *ngIf="tourService.hasNext(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.next()">Next »</button>
-    <button class="btn btn-sm btn-error" (click)="tourService.end()">End</button>
-  </div>
-</ng-template>
+      <button *ngIf="tourService.hasPrev(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.prev()">« Prev</button>
+      <button *ngIf="tourService.hasNext(tourService.currentStep)" class="btn btn-sm btn-default" (click)="tourService.next()">Next »</button>
+      <button class="btn btn-sm btn-error" (click)="tourService.end()">End</button>
+    </div>
+  </ng-template>
 </ngx-bootstrap-product-tour>
 ```

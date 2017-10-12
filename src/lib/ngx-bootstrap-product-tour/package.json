@@ -1,8 +1,8 @@
 {
     "name": "ngx-bootstrap-product-tour",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Angular 2+ product tour using ngx-bootstrap popover",
-    "keywords":["angular","tour","product tour","ngx-bootstrap"],
+    "keywords":["angular","angular2","angular4","tour","product tour","ngx-bootstrap"],
     "repository": {
       "type": "git",
       "url": "https://github.com/NMilicic/ngx-bootstrap-product-tour.git"

@@ -1,4 +1,4 @@
-<a style="cursor: pointer" (click)="tourService.toggle()" class="btn btn-primary" tourAnchor="start.tour">Start Demo Tour</a>
+<a style="cursor: pointer" (click)="tourService.toggle()" class="btn btn-primary" *ngIf="loaded" tourAnchor="start.tour">Start Demo Tour</a>
 
 <h2>About</h2>
 <p>This is a product tour library built with Angular (2+). It's inspired by <a tourAnchor="ngx-tour" href="https://github.com/isaacplmann/ngx-tour">ngx-tour</a>.</p>
@@ -120,8 +120,7 @@ this.tourService.initialize([{{ '{' }}
       <td>'top' | 'bottom' | 'right' | 'left'</td>
       <td><span tourAnchor="config.placement.default">'top'</span></td>
       <td>
-        Where the tour step should placed with respect to the anchor. 'before' and 'after' are synonyms for 'left' and 'right' respectively.
-        When RTL support is implemented, 'before' and 'after' will swap directions when RTL mode is enabled.
+        Where the tour step should placed with respect to the anchor.
       </td>
     </tr>
     <tr>
@@ -131,6 +130,38 @@ this.tourService.initialize([{{ '{' }}
       <td>
         Tour steps automatically scroll to the middle of the screen, if they are off the screen when shown. Setting this value to
         true will disable the scroll behavior.
+      </td>
+    </tr>
+    <tr>
+      <td>containerClass</td>
+      <td>string</td>
+      <td>""</td>
+      <td>
+        Css class for popover container.
+      </td>
+    </tr>
+    <tr>
+      <td>orphan</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>
+        Tour popover will be placed in the center of the screen, must have anchorId but it won't be shown next to that element.
+      </td>
+    </tr>
+    <tr>
+      <td>promise</td>
+      <td>Promise&lt;any&gt;</td>
+      <td>""</td>
+      <td>
+        Step shows after promise has been resolved.
+      </td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>Number</td>
+      <td>0</td>
+      <td>
+        Time in milliseconds before showing the tour step.
       </td>
     </tr>
   </tbody>
