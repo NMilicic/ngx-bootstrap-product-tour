@@ -14,6 +14,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
 
   @Input() public tourAnchor: string;
   private element: ElementRef;
+  private renderer: Renderer;
 
   constructor(private tourService: NgxBootstrapProductTourService,
     private tourStepTemplate: NgxBootstrapProductTourStepService,
@@ -26,6 +27,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
   ) {
     super(_elementRef, _renderer, viewContainerRef, _config, _cis);
     this.element = _elementRef;
+    this.renderer = _renderer
   }
 
   public ngOnInit(): void {
@@ -45,6 +47,9 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
     if (step.orphan)
       this.containerClass += ' orphan';
 
+    if (step.backdrop && !step.orphan)
+      this.renderer.setElementClass((<HTMLElement>this.element.nativeElement), 'tour-step-backdrop', true);
+
     this.show();
     if (!step.preventScrolling) {
       if (!withinviewport(this.element.nativeElement, { sides: 'bottom' })) {
@@ -56,6 +61,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
   }
 
   public hideTourStep(): void {
+    this.renderer.setElementClass((<HTMLElement>this.element.nativeElement), 'tour-step-backdrop', false);   
     this.hide();
   }
 }

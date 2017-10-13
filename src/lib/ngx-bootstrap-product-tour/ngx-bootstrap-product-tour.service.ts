@@ -189,7 +189,7 @@ export class NgxBootstrapProductTourService {
     } else {
       step.delay ? setTimeout(() => this.showStep(this.currentStep), step.delay) : this.showStep(this.currentStep)
     }
-    
+
     this.router.events.filter(event => event instanceof NavigationStart).first().subscribe(() => {
       if (this.currentStep) {
         this.hideStep(this.currentStep);
@@ -214,5 +214,13 @@ export class NgxBootstrapProductTourService {
     }
     anchor.hideTourStep();
     this.stepHide$.next(step);
+  }
+
+  public isStepOpen(step) {
+    const anchor = this.anchors[step && step.anchorId];
+    if (!anchor) {
+      return;
+    }
+    return anchor.isOpen;
   }
 }

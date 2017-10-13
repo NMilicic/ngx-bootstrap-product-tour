@@ -1,3 +1,4 @@
+<div *ngIf="tourService.currentStep?.backdrop && tourService.isStepOpen(tourService.currentStep)" class="tour-backdrop"></div>
 <ng-template #tourStep>
   <p class="tour-step-content">{{tourService.currentStep.content}}</p>
   <div class="tour-step-navigation">

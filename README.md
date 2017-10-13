@@ -71,6 +71,7 @@ Each step can have the following properties.
 | orphan | boolean |  false | Tour popover will be placed in the center of the screen, must have anchorId but it won't be shown next to that element. |
 | promise | promise&lt;any&gt; |  "" | Step shows after promise has been resolved. |
 | delay | number |  0 | Time in milliseconds before showing the tour step. |
+| backdrop | boolean |  false | Shows/hides backdrop. You need to set backgroud color and z-index on class .tour-backdrop and higher z-index on .tour-step-backdrop. |
 
 ## Defaults
 

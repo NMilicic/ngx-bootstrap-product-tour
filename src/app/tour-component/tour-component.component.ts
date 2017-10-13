@@ -18,17 +18,20 @@ export class TourComponentComponent {
       placement: 'right',
       title: 'Welcome',
       orphan: true,
-      promise: this.apiSimulation()
+      promise: this.apiSimulation(),
+      backdrop: true
     },
     {
       anchorId: 'ngx-tour',
       content: 'Thanks to ngx-tour for the inspiration for the library',
       title: 'Ngx-tour',
-      placement: 'right'
+      placement: 'right',
+      backdrop: true
     }, {
       anchorId: 'installation',
       content: 'First, install the library...',
       title: 'Installation',
+      backdrop: true
     }, {
       anchorId: 'usage',
       content: '...then use it.',
@@ -87,7 +90,6 @@ export class TourComponentComponent {
         route: '',
         containerClass: 'example-custom-container-class'
       });
-    this.tourService.start();
   }
 
   apiSimulation(): Promise<any> {

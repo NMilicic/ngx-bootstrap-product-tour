@@ -14,6 +14,7 @@ export interface IStep {
   orphan?: boolean;
   promise?: Promise<any>;
   delay?: number;
+  backdrop?: boolean;
 }
 
 export enum TourState {
