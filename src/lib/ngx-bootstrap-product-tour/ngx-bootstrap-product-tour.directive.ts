@@ -52,7 +52,7 @@ export class NgxBootstrapProductTourDirective implements OnInit, OnDestroy {
     }
     this.popoverDirective.show();
     if (!step.preventScrolling) {
-      (<HTMLElement>this.element.nativeElement).scrollIntoView({behavior: "instant", block: "center", inline: "nearest"});
+      (<HTMLElement>this.element.nativeElement).scrollIntoView({behavior: 'instant', block: 'center', inline: 'nearest'});
     }
   }
 
