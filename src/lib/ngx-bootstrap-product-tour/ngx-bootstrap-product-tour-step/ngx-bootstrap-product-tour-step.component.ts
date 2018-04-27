@@ -16,10 +16,10 @@ export class NgxBootstrapProductTourStepComponent implements AfterContentInit {
   public stepTemplate: TemplateRef<{ step: IStep }>;
 
   constructor(
-    private NgxBootstrapProductTourStepService: NgxBootstrapProductTourStepService,
+    private ngxBootstrapProductTourStepService: NgxBootstrapProductTourStepService,
     public tourService: NgxBootstrapProductTourService) { }
 
   public ngAfterContentInit(): void {
-    this.NgxBootstrapProductTourStepService.template = this.stepTemplate || this.defaultTourStepTemplate;
+    this.ngxBootstrapProductTourStepService.template = this.stepTemplate || this.defaultTourStepTemplate;
   }
 }
