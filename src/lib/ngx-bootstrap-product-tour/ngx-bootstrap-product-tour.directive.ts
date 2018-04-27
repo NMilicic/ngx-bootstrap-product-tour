@@ -5,8 +5,6 @@ import {
 import { ComponentLoaderFactory, PopoverConfig, PopoverDirective } from 'ngx-bootstrap';
 import { NgxBootstrapProductTourService } from './ngx-bootstrap-product-tour.service';
 import { IStep } from './ngx-bootstrap-product-tour.models';
-
-import withinviewport from 'withinviewport';
 import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour-step/ngx-bootstrap-product-tour-step.service';
 import { Router } from '@angular/router';
 
