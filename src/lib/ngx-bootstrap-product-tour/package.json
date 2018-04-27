@@ -1,39 +1,50 @@
 {
-    "name": "ngx-bootstrap-product-tour",
-    "version": "1.0.6",
-    "description": "Angular 2+ product tour using ngx-bootstrap popover",
-    "keywords":["angular","angular2","angular4","tour","product tour","ngx-bootstrap"],
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/NMilicic/ngx-bootstrap-product-tour.git"
-    },
-    "author": "Nikola Milicic <nikola.milicic991@gmail.com>",
-    "license": "MIT",
-    "private": false,
-    "dependencies": {
-      "@angular/common": "^4.2.4",
-      "@angular/core": "^4.2.4",
-      "@angular/router": "^4.2.4",
-      "bootstrap": "^3.3.7",
-      "ngx-bootstrap": "^1.9.3",
-      "rxjs": "^5.4.2",
-      "withinviewport": "^2.0.0",
-      "zone.js": "^0.8.14"
-    },
-    "devDependencies": {
-      "@angular/common": "^4.2.4",
-      "@angular/core": "^4.2.4",
-      "@angular/router": "^4.2.4",
-      "bootstrap": "^3.3.7",
-      "ngx-bootstrap": "^1.9.3",
-      "rxjs": "^5.4.2",
-      "withinviewport": "^2.0.0",
-      "zone.js": "^0.8.14"
-    },
-    "peerDependencies": {
-      "withinviewport": "^2.0.0",
-      "ngx-bootstrap": "^1.9.3",
-      "bootstrap": "^3.3.7"
-    }
+  "name": "ngx-bootstrap-product-tour",
+  "version": "1.0.6",
+  "description": "Angular 2+ product tour using ngx-bootstrap popover",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "tour",
+    "product tour",
+    "ngx-bootstrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NMilicic/ngx-bootstrap-product-tour.git"
+  },
+  "author": "Nikola Milicic <nikola.milicic991@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/forms": "^5.2.10",
+    "@angular/http": "^5.2.10",
+    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/platform-server": "^5.2.10",
+    "bootstrap": "^3.3.7",
+    "ngx-bootstrap": "^2.0.4",
+    "typescript": "^2.4.2",
+    "withinviewport": "^2.0.0",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/common": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/router": "^5.2.10",
+    "bootstrap": "^3.3.7",
+    "ngx-bootstrap": "^2.0.4",
+    "rxjs": "^5.5.10",
+    "withinviewport": "^2.0.0",
+    "zone.js": "^0.8.14"
+  },
+  "peerDependencies": {
+    "withinviewport": "^2.0.0",
+    "ngx-bootstrap": "^2.0.4",
+    "bootstrap": "^3.3.7"
   }
-  
+}

@@ -215,7 +215,7 @@ export class NgxBootstrapProductTourService {
     anchor.hideTourStep();
     this.stepHide$.next(step);
   }
-
+  
   public isStepOpen(step) {
     const anchor = this.anchors[step && step.anchorId];
     if (!anchor) {

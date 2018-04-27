@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopoverModule } from 'ngx-bootstrap/popover';
-import { NgxBootstrapProductTourDirective } from './ngx-bootstrap-product-tour.directive';
+import { NgxBootstrapProductTourDirective, NgxBootstrapPopoverDirective } from './ngx-bootstrap-product-tour.directive';
 import { NgxBootstrapProductTourStepComponent } from './ngx-bootstrap-product-tour-step/ngx-bootstrap-product-tour-step.component';
 import { NgxBootstrapProductTourService } from './ngx-bootstrap-product-tour.service';
 import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour-step/ngx-bootstrap-product-tour-step.service';
@@ -9,10 +9,11 @@ import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour
 @NgModule({
   imports: [
     CommonModule,
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
   ],
   declarations: [
     NgxBootstrapProductTourDirective,
+    NgxBootstrapPopoverDirective,
     NgxBootstrapProductTourStepComponent
   ],
   entryComponents: [
@@ -20,6 +21,7 @@ import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour
   ],
   exports: [
     NgxBootstrapProductTourDirective,
+    NgxBootstrapPopoverDirective,
     NgxBootstrapProductTourStepComponent
   ],
   providers: [
