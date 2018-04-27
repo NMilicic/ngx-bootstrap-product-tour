@@ -8,9 +8,9 @@ import { NgxBootstrapProductTourService } from '../../lib/ngx-bootstrap-product-
 })
 export class TourComponentComponent {
 
-  public loaded: boolean = false;
+  public loaded = false;
   constructor(public tourService: NgxBootstrapProductTourService) {
-    this.loaded = false
+    this.loaded = false;
     this.tourService.events$.subscribe(console.log);
     this.tourService.initialize([{
       anchorId: 'start.tour',
@@ -96,17 +96,17 @@ export class TourComponentComponent {
     return this.apiDataLoad().then((data) => {
       this.loaded = data;
       return new Promise(function (resolve, reject) {
-        setTimeout(() => { resolve(true) });
-      })
-    })
+        setTimeout(() => { resolve(true); });
+      });
+    });
   }
 
   apiDataLoad(): Promise<boolean> {
     return new Promise(function (resolve, reject) {
       setTimeout(() => {
         resolve(true);
-      }, 1000)
-    })
+      }, 1000);
+    });
   }
 
 }

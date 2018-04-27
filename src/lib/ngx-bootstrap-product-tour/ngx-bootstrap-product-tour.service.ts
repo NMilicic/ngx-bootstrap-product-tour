@@ -184,10 +184,10 @@ export class NgxBootstrapProductTourService {
     if (step.promise) {
       step.promise
         .then(() => step.delay ? setTimeout(() => this.showStep(this.currentStep), step.delay) : this.showStep(this.currentStep))
-        .catch(() => console.error(`Promise for step ${step.anchorId} has failed!`))
+        .catch(() => console.error(`Promise for step ${step.anchorId} has failed!`));
 
     } else {
-      step.delay ? setTimeout(() => this.showStep(this.currentStep), step.delay) : this.showStep(this.currentStep)
+      step.delay ? setTimeout(() => this.showStep(this.currentStep), step.delay) : this.showStep(this.currentStep);
     }
 
     this.router.events.filter(event => event instanceof NavigationStart).first().subscribe(() => {
