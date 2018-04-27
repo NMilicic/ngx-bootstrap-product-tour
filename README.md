@@ -2,12 +2,12 @@
 [![npm version](https://badge.fury.io/js/ngx-bootstrap-product-tour.svg)](https://badge.fury.io/js/ngx-bootstrap-product-tour)
 ## About
 
-This is a product tour library built with Angular (2+). It's inspired by [ngx-tour](https://github.com/isaacplmann/ngx-tour).
+This is a product tour library built with Angular (2+).
 `NgxBootstrapProductTourModule` is an implementation of the tour ui that uses [ngx-bootstrap](https://valor-software.com/ngx-bootstrap)  popovers to display tour steps.
 
 ## Installation
 
-1. `npm i ngx-bootstrap-product-tour ngx-bootstrap bootstrap withinviewport`
+1. `npm i ngx-bootstrap-product-tour ngx-bootstrap bootstrap`
 2. Import `NgxBootstrapProductTourModule.forRoot()` into your app module
 3. Make sure `RouterModule` is imported in your app module
 4. Include bootstrap css somehow - i.e. in your `index.html` add this line:
