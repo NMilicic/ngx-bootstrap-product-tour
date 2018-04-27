@@ -15,8 +15,9 @@ export class NgxBootstrapProductTourStepComponent implements AfterContentInit {
   @ContentChild(TemplateRef)
   public stepTemplate: TemplateRef<{ step: IStep }>;
 
-  constructor(private NgxBootstrapProductTourStepService: NgxBootstrapProductTourStepService, public tourService: NgxBootstrapProductTourService) {
-  }
+  constructor(
+    private NgxBootstrapProductTourStepService: NgxBootstrapProductTourStepService,
+    public tourService: NgxBootstrapProductTourService) { }
 
   public ngAfterContentInit(): void {
     this.NgxBootstrapProductTourStepService.template = this.stepTemplate || this.defaultTourStepTemplate;

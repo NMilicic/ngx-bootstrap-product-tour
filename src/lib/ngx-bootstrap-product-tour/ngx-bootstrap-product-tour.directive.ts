@@ -1,4 +1,7 @@
-import { ComponentFactoryResolver, Directive, ElementRef, Injector, Input, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef, Renderer } from '@angular/core';
+import {
+  ComponentFactoryResolver, Directive, ElementRef, Injector,
+  Input, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef, Renderer
+} from '@angular/core';
 import { ComponentLoaderFactory, PopoverConfig, PopoverDirective } from 'ngx-bootstrap';
 import { NgxBootstrapProductTourService } from './ngx-bootstrap-product-tour.service';
 import { IStep } from './ngx-bootstrap-product-tour.models';
@@ -27,7 +30,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
   ) {
     super(_elementRef, _renderer, viewContainerRef, _config, _cis);
     this.element = _elementRef;
-    this.renderer = _renderer
+    this.renderer = _renderer;
   }
 
   public ngOnInit(): void {
@@ -44,12 +47,13 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
     this.containerClass = step.containerClass ? step.containerClass : '';
     this.placement = step.placement ? step.placement : 'top';
     this.container = 'body';
-    if (step.orphan)
+    if (step.orphan) {
       this.containerClass += ' orphan';
+    }
 
-    if (step.backdrop && !step.orphan)
+    if (step.backdrop && !step.orphan) {
       this.renderer.setElementClass((<HTMLElement>this.element.nativeElement), 'tour-step-backdrop', true);
-
+    }
     this.show();
     if (!step.preventScrolling) {
       if (!withinviewport(this.element.nativeElement, { sides: 'bottom' })) {
@@ -61,7 +65,7 @@ export class NgxBootstrapProductTourDirective extends PopoverDirective implement
   }
 
   public hideTourStep(): void {
-    this.renderer.setElementClass((<HTMLElement>this.element.nativeElement), 'tour-step-backdrop', false);   
+    this.renderer.setElementClass((<HTMLElement>this.element.nativeElement), 'tour-step-backdrop', false);
     this.hide();
   }
 }
