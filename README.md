@@ -5,6 +5,9 @@
 This is a product tour library built with Angular (2+).
 `NgxBootstrapProductTourModule` is an implementation of the tour ui that uses [ngx-bootstrap](https://valor-software.com/ngx-bootstrap)  popovers to display tour steps.
 
+If you are using Angular 4 use package version 1.0.6
+For Angular 5 user package version 2.0.1
+
 ## Installation
 
 1. `npm i ngx-bootstrap-product-tour ngx-bootstrap bootstrap`
@@ -41,16 +44,17 @@ This is a product tour library built with Angular (2+).
 
 ## TourService
 
-The `TourService` controls the tour. Some key functions include:
+The `TourService` controls the tour. Some key functions include
+
 | Function | Description |
-| :-------------|:-------------|
-|start()|Starts the tour|
-|startAt(stepId: number \| string)|Start the tour at the step with stepId or at the specified index|
-|end()|Ends the tour|
-|pause()|Pauses the tour|
-|resume()|Resumes the tour|
-|next()|Goes to the next step|
-|prev()|Goes to the previous step|
+| ------------- | ------------- |
+| start() | Starts the tour |
+| startAt(stepId: number \| string) | Start the tour at the step with stepId or at the specified index |
+| end() | Ends the tour |
+| pause() | Pauses the tour |
+| resume() | Resumes the tour |
+| next() | Goes to the next step |
+| prev() | Goes to the previous step |
 
 ## Step Configuration
 
