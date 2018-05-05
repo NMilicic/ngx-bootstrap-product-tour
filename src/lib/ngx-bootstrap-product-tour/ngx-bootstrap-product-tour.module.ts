@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { NgxBootstrapProductTourDirective, NgxBootstrapPopoverDirective } from './ngx-bootstrap-product-tour.directive';
