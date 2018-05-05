@@ -23,9 +23,6 @@ import { NgxBootstrapProductTourStepService } from './ngx-bootstrap-product-tour
     NgxBootstrapProductTourDirective,
     NgxBootstrapPopoverDirective,
     NgxBootstrapProductTourStepComponent
-  ],
-  providers: [
-    NgxBootstrapProductTourService, NgxBootstrapProductTourStepService
   ]
 })
 export class NgxBootstrapProductTourModule {

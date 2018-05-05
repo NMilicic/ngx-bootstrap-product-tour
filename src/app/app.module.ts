@@ -20,10 +20,14 @@ import { OtherRouteComponent } from './other-route/other-route.component';
       component: TourComponentComponent,
       path: '',
     },
-  {
-    component: OtherRouteComponent,
-    path: 'other',
-  }]),
+    {
+      component: OtherRouteComponent,
+      path: 'other',
+    },
+    {
+      path: 'lazyLoadDemo',
+      loadChildren: 'app/lazy-load-demo/lazy-load-demo.module#LazyLoadDemoModule'
+    }]),
   ],
   providers: [],
   bootstrap: [AppComponent]
