@@ -1,6 +1,6 @@
 import {
-  ComponentFactoryResolver, Directive, ElementRef, Injector,
-  Input, NgZone, OnDestroy, OnInit, Renderer2, ViewContainerRef, Renderer, Host, HostBinding
+  Directive, ElementRef,
+  Input, OnDestroy, OnInit, Host, HostBinding
 } from '@angular/core';
 import { ComponentLoaderFactory, PopoverConfig, PopoverDirective } from 'ngx-bootstrap';
 import { NgxBootstrapProductTourService } from './ngx-bootstrap-product-tour.service';
@@ -14,8 +14,9 @@ import { Router } from '@angular/router';
 export class NgxBootstrapPopoverDirective extends PopoverDirective { }
 
 @Directive({
-  selector: '[tourAnchor]'
+  selector: '[tourAnchor]',
 })
+
 export class NgxBootstrapProductTourDirective implements OnInit, OnDestroy {
   protected _elementClass: string[] = [];
   @Input() public tourAnchor: string;
@@ -52,7 +53,7 @@ export class NgxBootstrapProductTourDirective implements OnInit, OnDestroy {
     }
     this.popoverDirective.show();
     if (!step.preventScrolling) {
-      (<HTMLElement>this.element.nativeElement).scrollIntoView({behavior: 'instant', block: 'center', inline: 'nearest'});
+      (<HTMLElement>this.element.nativeElement).scrollIntoView({ behavior: 'instant', block: 'center', inline: 'nearest' });
     }
   }
 

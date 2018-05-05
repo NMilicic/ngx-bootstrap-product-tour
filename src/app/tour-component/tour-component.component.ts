@@ -54,6 +54,11 @@ export class TourComponentComponent {
       route: 'other',
       title: 'Another Route',
     }, {
+      anchorId: 'lazyLoadDemo',
+      content: 'And you can Lazy load modules!',
+      route: 'lazyLoadDemo',
+      title: 'LazyLoaded Route',
+    }, {
       anchorId: 'config.route',
       content: 'And then back again.',
       placement: 'bottom',

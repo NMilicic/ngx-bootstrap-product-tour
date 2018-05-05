@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-product-tour",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Angular 2+ product tour using ngx-bootstrap popover",
   "keywords": [
     "angular",
@@ -18,14 +18,9 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@angular/animations": "^5.2.10",
-    "@angular/compiler": "^5.2.10",
-    "@angular/compiler-cli": "^5.2.10",
-    "@angular/forms": "^5.2.10",
-    "@angular/http": "^5.2.10",
-    "@angular/platform-browser": "^5.2.10",
-    "@angular/platform-browser-dynamic": "^5.2.10",
-    "@angular/platform-server": "^5.2.10",
+    "@angular/common": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/router": "^5.2.10",
     "bootstrap": "^3.3.7",
     "ngx-bootstrap": "^2.0.4",
     "typescript": "^2.4.2",
