@@ -5,8 +5,9 @@
 This is a product tour library built with Angular (2+).
 `NgxBootstrapProductTourModule` is an implementation of the tour ui that uses [ngx-bootstrap](https://valor-software.com/ngx-bootstrap)  popovers to display tour steps.
 
-If you are using Angular 4 use package version 1.0.6
-For Angular 5 user package version 2.0.1
+For Angular 4 use package version 1.0.6 
+
+For Angular 5 use package version 2.0.1
 
 ## Installation
 
