@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 @Directive({
   selector: '[tourAnchor]'
 })
-export class NgxBootstrapPopoverDirective extends PopoverDirective { }
+export class NgxBootstrapPopoverDirective extends PopoverDirective {
+  triggers = '';
+}
 
 @Directive({
   selector: '[tourAnchor]',
@@ -44,6 +46,7 @@ export class NgxBootstrapProductTourDirective implements OnInit, OnDestroy {
     this.popoverDirective.containerClass = step.containerClass ? step.containerClass : '';
     this.popoverDirective.placement = step.placement ? step.placement : 'top';
     this.popoverDirective.container = 'body';
+    this.popoverDirective.triggers = '';
     if (step.orphan) {
       this.popoverDirective.containerClass += ' orphan';
     }
