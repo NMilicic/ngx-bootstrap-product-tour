@@ -7,17 +7,14 @@ This is a product tour library built with Angular (2+).
 
 For Angular 4 use package version 1.0.6 
 
-For Angular 5 use package version 2.0.1
+For Angular 5 use package version 2.0.x
 
 ## Installation
 
 1. `npm i ngx-bootstrap-product-tour ngx-bootstrap bootstrap`
 2. Import `NgxBootstrapProductTourModule.forRoot()` into your app module
 3. Make sure `RouterModule` is imported in your app module
-4. Include bootstrap css somehow - i.e. in your `index.html` add this line:
-    `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">`
-    or if you are using angular-cli add to `angular-cli.json` add under styles
-    ` "../node_modules/bootstrap/dist/css/bootstrap.min.css"`
+4. Include bootstrap css.
 
 ## Usage
 
@@ -41,7 +38,9 @@ For Angular 5 use package version 2.0.1
     }]);
     ```
 4. Start the tour with `tourService.start()`
-5. Check out the [demo](https://nmilicic.github.io/ngx-bootstrap-product-tour/) for an example or [demo source code](https://github.com/NMilicic/ngx-bootstrap-product-tour/tree/master/src).
+
+## Demo
+Demo page can be found [here](https://nmilicic.github.io/ngx-bootstrap-product-tour/) and it's [source code here](https://github.com/NMilicic/ngx-bootstrap-product-tour/tree/master/src//app).
 
 ## TourService
 
